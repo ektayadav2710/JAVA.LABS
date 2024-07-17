@@ -1,0 +1,30 @@
+package sachin;
+import java.util.*;
+
+public class reverse {
+	 
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        // Prompt the user to enter a sentence
+	        System.out.print("Enter a sentence: ");
+	        String sentence = scanner.nextLine();
+
+	        // Split the sentence into words
+	        String[] words = sentence.split("\\s+"); // Split by whitespace
+
+	        // Construct the reversed sentence
+	        StringBuilder reversedSentence = new StringBuilder();
+	        for (int i = words.length - 1; i >= 0; i--) {
+	            reversedSentence.append(words[i]).append(" ");
+	        }
+
+	        // Remove the trailing space
+	        reversedSentence.deleteCharAt(reversedSentence.length() - 1);
+
+	        // Output the reversed sentence
+	        System.out.println("Reversed sentence: " + reversedSentence);
+
+	        scanner.close();
+	    }
+	}
