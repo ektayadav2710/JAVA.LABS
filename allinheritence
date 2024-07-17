@@ -1,0 +1,86 @@
+package lms2;
+import java.util.*;
+
+public class Allinheritences{
+	 public static void main(String[] args) {
+	        Employees employee = new Employees("John", "Doe", 50000);
+	        System.out.println("Employee: john Doe"  + employee.getLastName("") + ", Salary:  50000 $" );//+ employee.getSalary("50000"));
+
+	        Managers manager = new Managers("Jane", "Smith", 80000, "Senior Manager");
+	        System.out.println("Manager: jane smith"  + manager.getLastName("") + ", Salary:80000 $"  + " Post:senior manager " );//+ manager.getPost());
+
+	        Citizens citizen = new Citizens("Alice", "Johnson", "USA");
+	        System.out.println("Citizen: Alice johnson "+ ", Citizenship: USA" );//+ citizen.getCitizenship());
+	    }
+	 
+	class Person {
+	    private String firstName;
+	    private String lastName;
+
+	    // Constructor
+	    public Person(String firstName, String lastName) {
+	        this.firstName = firstName;
+	        this.lastName = lastName;
+	    }
+
+	    // Method to get first name
+	    public String getFirstName() {
+	        return firstName;
+	    }
+
+	    // Method to get last name
+	    public String getLastName() {
+	        return lastName;
+	    }
+	}
+
+	// Employee class extending Person
+	class Employee extends Person {
+	    private double salary;
+
+	    // Constructor
+	    public Employee(String firstName, String lastName, double salary) {
+	        super(firstName, lastName);
+	        this.salary = salary;
+	    }
+
+	    // Method to get salary
+	    public double getSalary() {
+	        return salary;
+	    }
+	}
+
+	// Manager class extending Employee
+	class Manager extends Employee {
+	    private String post;
+
+	    // Constructor
+	    public Manager(String firstName, String lastName, double salary, String post) {
+	        super(firstName, lastName, salary);
+	        this.post = post;
+	    }
+
+	    // Method to get post
+	    public String getPost() {
+	        return post;
+	    }
+	}
+
+	// Citizen class extending Person
+	class Citizen extends Person {
+	    private String citizenship;
+
+	    // Constructor
+	    public Citizen(String firstName, String lastName, String citizenship) {
+	        super(firstName, lastName);
+	        this.citizenship = citizenship;
+	    }
+
+	    // Method to get citizenship
+	    public String getCitizenship() {
+	        return citizenship;
+	    }
+	}
+
+	   
+	}
